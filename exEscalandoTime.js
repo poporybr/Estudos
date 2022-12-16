@@ -17,3 +17,16 @@ function addPlayer() {
     document.getElementById("number").value = ""
   }
 }
+
+function removePlayer() {
+  const number = document.getElementById("numberToRemove").value
+  const playerToRemove = document.getElementById("player-" + number)
+
+  const confirmation = confirm("Remover o jogador " + playerToRemove.innerText + "?")
+
+  if (confirmation) {
+    document.getElementById("team-list").removeChild(playerToRemove)
+    document.getElementById("numberToRemove").value = ""
+  }
+}
+
