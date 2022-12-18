@@ -1,3 +1,4 @@
+// Evento == ev
 function register(ev) {
   console.log(ev)
   const sectionElement = ev.currentTarget.parentNode
