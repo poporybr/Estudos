@@ -47,3 +47,5 @@ document.getElementById('cookie2Btn').addEventListener('click', function () {
   input.value = ''
   console.log(document.cookie)
 })
+
+//test
