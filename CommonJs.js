@@ -21,7 +21,7 @@ function render() {
 
 module.exports = render
 
-
+//exportado
 
 
 // store.js
