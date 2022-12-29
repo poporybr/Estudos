@@ -4,6 +4,7 @@ console.log(towns)
 console.log(...towns)
 console.log(...towns[0])
 
+//test
 const townsCopy = towns
 
 townsCopy.pop()
