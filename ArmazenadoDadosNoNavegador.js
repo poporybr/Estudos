@@ -48,4 +48,4 @@ document.getElementById('cookie2Btn').addEventListener('click', function () {
   console.log(document.cookie)
 })
 
-//test
+
