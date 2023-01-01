@@ -12,4 +12,4 @@ function birthday(date) {
   console.log(`Dias até completar ${ageInYears + 1} anos: ${daysToNextBirthday}`)
 }
 
-birthday("1995-09-02")
+birthday("1995-10-02")
