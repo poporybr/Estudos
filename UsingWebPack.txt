@@ -1,0 +1,23 @@
+1 - para começarmos:
+npm init -y
+
+2 - Dentro desse novo projeto vamos criar uma pasta “dist” e dentro dela uma página “index.html” simples apenas para testarmos a saída do webpack:
+
+3 - Agora vamos criar uma pasta “src” e um arquivo “index.js” dentro dela, por enquanto sem conteúdo.
+
+4 - Com tudo preparado, vamos instalar como dependências de desenvolvimento o webpack e a webpack-cli, que permite interagir com o webpack pela linha de comando:
+npm install --save-dev webpack webpack-cli
+
+5 - Vamos também instalar como dependência de produção a biblioteca dayjs, que usamos no último exercício:
+npm install --save dayjs
+
+6 - E agora só precisamos incluir algum código dentro do nosso arquivo “index.js” utilizando o dayjs:
+import dayjs from 'dayjs'
+alert(`Hoje é: ${dayjs().format("DD/MM/YYYY")}`)
+
+7 - Tudo pronto. Agora só precisamos rodar o webpack através do comando:
+npx webpack 
+
+Obs.: Repare que ele criou um único arquivo de saída “dist/main.js” com o conteúdo necessário para nossa página funcionar. Mesmo se excluirmos a pasta “node_modules” você verá que a página ainda funciona.
+
+Obs².: Repare também que o conteúdo já vem minificado, ou seja, otimizado para ter o menor tamanho possível, removendo tudo que não é essencial para o funcionamento do código, como comentários, espaços, quebras de linha, etc.
