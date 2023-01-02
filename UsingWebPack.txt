@@ -21,3 +21,21 @@ npx webpack
 Obs.: Repare que ele criou um único arquivo de saída “dist/main.js” com o conteúdo necessário para nossa página funcionar. Mesmo se excluirmos a pasta “node_modules” você verá que a página ainda funciona.
 
 Obs².: Repare também que o conteúdo já vem minificado, ou seja, otimizado para ter o menor tamanho possível, removendo tudo que não é essencial para o funcionamento do código, como comentários, espaços, quebras de linha, etc.
+
+
+//configurando 
+“webpack.config.js”
+
+const path = require('path')
+
+module.exports = {
+  entry: {
+    index: './src/index.js',
+    hello: './src/hello.js'
+  },
+  output: {
+    path: path.resolve(__dirname, 'public'),
+    filename: '[name].min.js'
+  },
+  mode: 'development'
+}
