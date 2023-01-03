@@ -1,0 +1,46 @@
+1 - Para essa aula continuaremos a utilizar a pasta das aulas anteriores sobre webpack.
+
+2 - Para utilizar um plugin no webpack precisamos primeiro instalar o pacote do plugin como dependência de desenvolvimento. Iremos utilizar nessa aula o plugin “mini-css-extract-plugin”, que é um plugin para extrair o CSS incluindo no ponto de entrada em um arquivo separado do nosso arquivo javascript. Comece instalando o plugin:
+Obs.: Para mais plugins visite [https://webpack.js.org/plugins/](https://webpack.js.org/plugins/)
+npm install --save-dev mini-css-extract-plugin
+
+3 - Agora que já instalamos o plugin, precisamos ajustar as configurações do webpack para incluir o plugin e utilizá-lo nos arquivos CSS:
+Obs.: Repare que para esse plugin isso ocorre em duas etapas, primeiro incluímos a instância da classe MiniCssExtractPlugin no array “plugins”, e então substituímos o “style-loader” pelo loader do plugin (porque agora não iremos carregar estilos com o javascript e sim incluir estilos em um css separado)
+const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+module.exports = {
+  entry: {
+    index: './src/index.js'
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist')
+  },
+  mode: 'development',
+  module: {
+    rules: [{
+      test: /\.css$/,
+      use: [MiniCssExtractPlugin.loader, 'css-loader']
+    }]
+  },
+  plugins: [
+    new MiniCssExtractPlugin()
+  ]
+}
+
+4 - Por fim, só precisamos ajustar o arquivo index.html para incluir o novo arquivo css que geramos:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usando o Webpack</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js"></script>
+</head>
+<body>
+  <h1>Usando o Webpack</h1>
+</body>
+</html>
+
