@@ -108,30 +108,56 @@ module.exports = class User {
 
 Classe app 
 
-```jsx
-const Installment = require("./Installment")
+const Deposit = require("./Deposit")
+const Loan = require("./Loan")
+const Transfer = require("./Transfer")
+const User = require("./User")
 
-module.exports = class Loan {
-  static #fee = 1.05
+module.exports = class App {
+  static #users = []
 
-  constructor(value, installments) {
-    this.value = value
-    this.installments = []
-    for (let i = 1; i <= installments; i++) {
-      this.installments.push(new Installment((value * Loan.#fee) / installments, i))
+  static findUser(email) {
+    const user = this.#users.find(user => user.email === email)
+    return user ?? null
+  }
+
+  static createUser(email, fullname) {
+    const userExists = App.findUser(email)
+    if (!userExists) {
+      this.#users.push(new User(email, fullname))
     }
-    this.createdAt = new Date()
   }
 
-  static get fee() {
-    return Loan.#fee
+  static deposit(email, value) {
+    const user = App.findUser(email)
+    if (user) {
+      const newDeposit = new Deposit(value)
+      user.account.addDeposit(newDeposit)
+    }
   }
 
-  static set fee(newFeePercentage) {
-    Loan.#fee = 1 + (newFeePercentage / 100)
+  static transfer(fromUserEmail, toUserEmail, value) {
+    const fromUser = App.findUser(fromUserEmail)
+    const toUser = App.findUser(toUserEmail)
+    if (fromUser && toUser) {
+      const newTransfer = new Transfer(fromUser, toUser, value)
+      fromUser.account.addTransfer(newTransfer)
+      toUser.account.addTransfer(newTransfer)
+    }
+  }
+
+  static takeLoan(email, value, numberOfInstallments) {
+    const user = App.findUser(email)
+    if (user) {
+      const newLoan = new Loan(value, numberOfInstallments)
+      user.account.addLoan(newLoan)
+    }
+  }
+
+  static changeLoanFee(newFeePercentage) {
+    Loan.fee = newFeePercentage
   }
 }
-```
 
 Arquivo teste
 
