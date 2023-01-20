@@ -1,5 +1,5 @@
 Os acessadores são um recurso para modificar a forma como acessamos uma propriedade de um objeto. Com o acessador get podemos modificar a forma como uma propriedade é lida e com o acessador set podemos modificar a forma como uma propriedade é alterada via atribuição.
-//
+////
 1 - Para criarmos adicionarmos um get em uma classe utilizamos o mesmo formato de um método precedido pela palavra get:
 class Wallet {
   #amount
