@@ -13,6 +13,7 @@ function register(ev) {
   }
 }
 
+//função remover
 function removeEvent() {
   button.removeEventListener("click", register)
   alert("Event Removed")
