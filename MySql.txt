@@ -1,0 +1,17 @@
+Usando XAMPP!
+
+1 - mysql --user=root --password=
+
+2 - creatE database "NOME DO BANCO";
+
+3 - create table "NOME DA TABELA" (chave dos valores, chave, chave...);
+
+4 - insert into "NOME DA TABELA" values (valores, valores, valores...);
+
+5 - describe "NOME DA TABELA";
+
+6 - select * from "NOME DA TABELA";
+
+7 - DROP TABLE `NOME DA TABELA`;
+
+8 - DROP DATABASE `NOME DO BANCO`;
