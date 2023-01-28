@@ -2,7 +2,7 @@
 class Account {
   #password
   #balance
-
+//
   constructor(user) {
     this.email = user.email
     this.#password = user.password
