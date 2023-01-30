@@ -1,17 +1,36 @@
 Usando XAMPP!
 
 1 - mysql --user=root --password=
+(login xampp)
 
 2 - creatE database "NOME DO BANCO";
+CRIAR BANCO
 
 3 - create table "NOME DA TABELA" (chave dos valores, chave, chave...);
+CRIAR TABELA DENTRO DE BANCO
 
 4 - insert into "NOME DA TABELA" values (valores, valores, valores...);
+INSERIR VALORES NA TABELA
 
 5 - describe "NOME DA TABELA";
+MOSTRAR VALORES E CHAVES DA TABELA
 
 6 - select * from "NOME DA TABELA";
+MOSTRAR VALORES REAIS DA TABELA
 
 7 - DROP TABLE `NOME DA TABELA`;
+APAGAR TABELA
 
 8 - DROP DATABASE `NOME DO BANCO`;
+APAGAR BANCO
+
+9 - alter table "nome da tabela" add "nome da coluna" (varchar (15));
+ADICIONAR NOVA COLUNA NA TABELA
+
+10 - alter table "Nome da tabela" drop "nome da coluna";
+APAGAR COLUNA NA TABELA
+
+11 - update "nome da tabela" set id = 6 where `name` like 'Eduardo Marques';
+Caso um update seja realizado sem where TODAS AS LINHAS DA TABELA ATUALIZADA
+APRESENTARÃO O MESMO VALOR nas colunas modificadas!
+
