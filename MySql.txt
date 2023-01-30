@@ -63,3 +63,28 @@ palavras OR e AND para relacionar filtros
 
 20 - select * from "nome da tabela" where not id = 6;
 O operador not é utilizado na negação de uma condição de filtragem.
+
+21 - O operador de diferença em SQL é: <>
+Ele deve ser utilizado quando queremos valores diferentes de.
+
+22 -  select * from "nome da tabela" where "coluna" in ("valor", "valor, "valor"...)
+O operador in promove a comparação com uma dada lista de valores
+
+23 - select * from "nome da tabela" where first_name like '_enelope' or first_name like '%CK';
+O operador like promove a comparação com a capacidade de utilizar caracteres curingas.
+Os caracteres especiais são:
+● _ : Substitui apenas um caracter
+● %: Substitui qualquer quantidade de caracteres
+
+24 - select distinct "coluna" from "nome da tabela";
+Para saber quais são as entradas únicas em um banco utilizamos o distinct
+
+25 - select id from "nome da tabela" order by id;
+Para ordenar os resultados de uma query utilizamos order by. DESC para descrescente
+
+26 - select max(id) from "nome da tabela";
+Para retornar o valor máximo em um tabela utilizamos dentro do select a função max().
+
+26 - select min(id) from "nome da tabela";
+Para retornar o valor minimo em um tabela utilizamos dentro do select a função min().
+
