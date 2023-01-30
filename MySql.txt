@@ -34,3 +34,32 @@ APAGAR COLUNA NA TABELA
 Caso um update seja realizado sem where TODAS AS LINHAS DA TABELA ATUALIZADA
 APRESENTARÃO O MESMO VALOR nas colunas modificadas!
 
+12 - delete from "nome da tabela" where `name` like 'Eduardo Marques';
+DELETAR LINHA NA TABELA
+
+13 - truncate table "nome da tabela";
+APAGAR TODOS OS REGISTROS DA TABELA
+
+14 - mysqldump -u root -p hospital > hospital.sql
+EXPOTAR BANCO EM FORMATO SQL
+
+15 - select "nome da coluna" from "nome da tabela";
+EXIBIR APENAS UMA COLUNA DA TABELA
+
+16- select "nome da coluna" as "apelido" from "nome da tabela"; 
+Podemos dar “apelidos” para tabelas e colunas em nossas consultas. Fazemos isso
+utilizando a palavra as ou apenas colocando-os ao lado da tabela ou coluna.
+
+17 - select "coluna" , "coluna" from "nome da tabela";
+Podemos modificar a ordem em que as colunas aparecem no resultado especificando o que
+queremos no select.
+
+18 - select * from "nome da tabela" where id = '1';
+Para filtrar os resultados de uma seleção utilizamos a palavra where
+
+19 - select * from "nome da tabela" where id = '1' or id = '3';
+Caso queira filtrar levando em consideração diversos pontos, podemos utilizar as
+palavras OR e AND para relacionar filtros
+
+20 - select * from "nome da tabela" where not id = 6;
+O operador not é utilizado na negação de uma condição de filtragem.
