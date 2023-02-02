@@ -3,7 +3,7 @@ class Book {
     this.title = title
     this.published = false
   }
-
+//
   publish() {
     this.published = true
   }
