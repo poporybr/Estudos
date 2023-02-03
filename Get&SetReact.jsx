@@ -38,6 +38,7 @@ class Gato extends React.Component{
         caixa.innerText = newIdade
 
     }
+//
     render(){
         return <div>
             {this.getNome()}  <br/>
