@@ -94,3 +94,8 @@ Para realizar isso, precisaremos de mais de uma coluna e utilizar o comando grou
 SOMA - select custumer_id, sum(amount) from payment group by customer_id;
 
 CONTAGEM - select custumer_id, count(customer_id) from payment group by customer_id;
+
+28 -  Source C:caminho/da/pasta/arquivo.sql
+Abrir um banco de dados externo no terminal 
+
+
