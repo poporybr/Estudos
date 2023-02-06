@@ -88,3 +88,9 @@ Para retornar o valor máximo em um tabela utilizamos dentro do select a funçã
 26 - select min(id) from "nome da tabela";
 Para retornar o valor minimo em um tabela utilizamos dentro do select a função min().
 
+27 - Agregação - Em alguns cenários queremos contar, somar, agrupar os resultados.
+Para realizar isso, precisaremos de mais de uma coluna e utilizar o comando group by
+
+SOMA - select custumer_id, sum(amount) from payment group by customer_id;
+
+CONTAGEM - select custumer_id, count(customer_id) from payment group by customer_id;
