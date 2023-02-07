@@ -98,4 +98,16 @@ CONTAGEM - select custumer_id, count(customer_id) from payment group by customer
 28 -  Source C:caminho/da/pasta/arquivo.sql
 Abrir um banco de dados externo no terminal 
 
+29 - Filtros em agregações - problema
+Como o WHERE acontece antes do SELECT não podemos utilizá-lo!
+A filtragem utilizando HAVING resolve este problema pois ele será executado somente
+após o SELECT.
 
+select
+	customer_id;
+	sum(amount)
+from
+	payment
+group by customer_id;
+having
+	sum(amount) > 100
