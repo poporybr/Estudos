@@ -147,3 +147,22 @@ select
 		then
 			'cliente eventual'
 	END as tipo_cliente
+
+32 - Um join é a junção de duas ou mais tabelas para uma única consulta.
+Joins são utilizados para agregar informações de diferentes tabelas, mas para juntar
+tudo precisamos de uma cola. 
+As chaves (PKs e FKs) são utilizadas como cola. Elas identificam o relacionamento entre
+as tabelas. Assim, quando elas forem iguais podem ser utilizadas.
+O inner join preserva apenas os registros que tem equivalência nas duas tabelas
+(interseção).
+A sintaxe de um inner join consiste em estabelecer uma equivalência entre as chaves
+utilizadas. Ex:
+
+select 
+	cli.id
+	cli.nome
+	vend.valor
+from
+	cliente cli
+inner join
+	venda vend on vend.id_cliente = cli.id
