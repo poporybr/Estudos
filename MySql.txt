@@ -111,3 +111,39 @@ from
 group by customer_id;
 having
 	sum(amount) > 100
+
+30 - Limitando resultados - Para limitar a quantidade de linhas retornadas numa consulta utilizamos a palavra limit,
+como no exemplo abaixo:
+select 
+	*
+from
+	film
+limit 30;
+
+Nós podemos especificar também um offset, para dizer a partir de qual registro a
+contagem do limite começa.
+
+31 - Condições e classificações - sintaxe
+	A expressão CASE é dividida nas seguintes etapas:
+	1. CASE: Inicia a verificação de condições
+	2. WHEN: Recebe a condição a ser verificada
+	3. THEN: Retorno exibido caso a condição seja verdadeira
+	4. ELSE: Resultado padrão/default
+	5. END: Finaliza a expressão de verificação
+	
+select 
+	customer_id,
+	case
+		when
+			count(customer_id) . 30
+		then
+			'super cliente'
+		when
+			count(customer_id) > 15
+		then
+			'cliente fiel'
+		when
+			count(customer_id) > 0
+		then
+			'cliente eventual'
+	END as tipo_cliente
