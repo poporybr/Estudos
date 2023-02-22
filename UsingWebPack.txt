@@ -22,7 +22,7 @@ Obs.: Repare que ele criou um único arquivo de saída “dist/main.js” com o 
 
 Obs².: Repare também que o conteúdo já vem minificado, ou seja, otimizado para ter o menor tamanho possível, removendo tudo que não é essencial para o funcionamento do código, como comentários, espaços, quebras de linha, etc.
 
-
+//
 //configurando 
 “webpack.config.js”
 
