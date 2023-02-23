@@ -1,0 +1,75 @@
+```jsx
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Requisições GET com Javascript</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main id="countries">
+
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
+```
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#countries {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.country {
+  background-color: #eaeaea;
+  margin: 1rem;
+  padding: 1rem 1.5rem;
+  width: 11rem;
+}
+
+.country h2 {
+  margin-bottom: .75rem;
+}
+
+.country img {
+  width: 8rem;
+  height: auto;
+}
+
+
+function createCountryCard(country) {
+  const card = document.createElement('div')
+  card.classList.add('country')
+
+  const countryName = country.name.common
+  const name = document.createElement('h2')
+  name.textContent = countryName
+
+  const flag = document.createElement('img')
+  flag.src = country.flags.svg
+  flag.alt = countryName
+
+  card.append(name, flag)
+  document.querySelector('#countries').append(card)
+}
+
+async function getCountries() {
+  const response = await fetch('https://restcountries.com/v3.1/all')
+  const countries = await response.json()
+
+  console.log(countries)
+  countries.forEach(createCountryCard)
+}
+
+getCountries()
