@@ -1,4 +1,5 @@
 // functions.js
+//
 
 export function label(attributes) {
   const element = document.createElement('label')
