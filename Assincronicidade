@@ -1,4 +1,4 @@
-Demonstração de código síncrono 
+Demonstração de código síncrono //
 
 function step02() {
     console.log('Passo 02')
