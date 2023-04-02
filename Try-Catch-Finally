@@ -25,3 +25,4 @@ try{
 
 //O try catch serve para o codigo nao parar e continuar rodando mesmo com erro presento nele
 console.log('Ola mundo!')
+//
