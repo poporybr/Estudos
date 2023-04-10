@@ -11,7 +11,7 @@ class Property {
     return this.price / this.area
   }
 }
-
+//
 class House extends Property { }
 
 
