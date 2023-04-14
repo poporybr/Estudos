@@ -1,5 +1,6 @@
-function adicionarItem(){
-    const value = document.getElementById('inputToDo').value
+const btnAdd = document.getElementById('btnAdd');
+btnAdd.addEventListener("click", function adicionarItem(){
+    const value = document.getElementById('inputToDo').value;
     const valueNoSpace = value.replace('/\s+/g, ""');
     const container = document.getElementById('containerListToDo');
 
@@ -11,16 +12,21 @@ function adicionarItem(){
     paragrafh.textContent = value;
     paragrafh.id = 'p' + value;
 
-    const btnDelete = document.createElement('img');
-    btnDelete.setAttribute('onClick', 'removerItem()');
-    btnDelete.setAttribute('src', '../imgs/excluir.png')
-    btnDelete.classList.add('btnDeleteToDo')
-
     const card = document.createElement('div');
-    card.id = 'div' + valueNoSpace;
     card.classList.add('cardToDo');
 
 
-    card.append(check, paragrafh, btnDelete);
+    card.append(check, paragrafh);
     container.append(card);
-}
+});
+
+const btnDelete = document.getElementById('btnDelete');
+btnDelete.addEventListener("click", function removerItem(){
+    let elementos = document.getElementsByClassName('cardToDo');
+    for(let i = 0; i < elementos.length; i++){
+        if(i === elementos.length - 1){
+            const excluir = elementos[i];
+            excluir.remove();
+        }
+    }
+});
