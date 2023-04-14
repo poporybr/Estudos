@@ -1,0 +1,10 @@
+.cardToDo{
+    display: flex;
+    flex-direction: row;
+}
+
+.btnDeleteToDo{
+    width: 20px;
+    height: 20px;
+    display: inline;
+}
